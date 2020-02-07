@@ -1,0 +1,30 @@
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>examples check</title>
+<style>
+*{margin:0;padding:0}
+#examples{display:flex;flex-wrap:wrap;list-style-type:none;padding-bottom:1rem;padding-right:1rem;}
+#examples>li{margin-top:1rem;margin-left:1rem;width:250px;border:1px solid #ddd;box-shadow:2px 2px 2px #eee;border-radius:.5rem;padding:1rem;}
+#examples>li .title{font-size:1.2rem;line-height:1.5;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+#examples>li iframe{border:1px solid #ddd;width:100%;height:150px;}
+</style>
+</head>
+<body>
+<ul id="examples"></ul>
+<script>
+const elExamples = document.getElementById("examples");
+function addExampleBox(name){
+  const elContainer = elExamples.appendChild(document.createElement("li"));
+  const elTitle = elContainer.appendChild(document.createElement("p"));
+  const elIFrame = elContainer.appendChild(document.createElement("iframe"));
+  elTitle.className="title";
+  elTitle.textContent=name;
+  elIFrame.src=`./${name}/index.html`;
+}
+for(let name of [exampleNames]){
+  addExampleBox(name);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta property="og:title" content="Explain CSS in JS">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://github.m98.be/explain-css-in-js/ogp.png">
+<meta property="og:description" content="各種 CSS in JS ライブラリがどんな処理を行って出力しているのかを視覚的に理解するためのサンプル集です。">
+<title>Explain CSS in JS</title>
+<style>
+*{margin:0;padding:0;}
+@media (prefers-color-scheme: dark){body,.loading{background-color:#333;color:#f9f9f9;}}
+html,body,.loading{height:100%;}
+#app{overflow:auto;}
+.loading{position:fixed;top:0;left:0;width:100%;z-index:99999;display:flex;justify-content:center;align-items:center;transition:opacity .7s ease, visibility .7s ease;}
+.loading p{color:#bbb;}
+.loading h1{font-weight:normal;}
+.progress{position:relative;height:4px;background-color:#48657c;border-radius:2px;margin-top:.5rem;overflow:hidden}
+.progress:before,.progress:after{content:"";position:absolute;background-color:#90caf9;top:0;left:0;bottom:0}
+.progress:before{animation: idt 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite}
+.progress:after{animation:idt-s 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) 1.15s infinite}
+@keyframes idt{0%{left:-35%;right:100%}60%{left:100%;right:-90%}100%{left:100%;right:-90%}}
+@keyframes idt-s{0%{left:-200%;right:100%}60%{left:107%;right:-8%}100%{left:107%;right:-8%}}
+</style>
+</head>
+<body>
+	<div class="loading">
+		<div>
+			<h1>Explain CSS in JS</h1>
+			<p>関西node学園 9時限目</p>
+			<div class="progress"></div>
+		</div>
+	</div>
+	<div id="app"></div>
+</body>
+</html>

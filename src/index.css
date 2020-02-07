@@ -1,0 +1,35 @@
+.loading{opacity:0;visibility:hidden;}
+
+.simple-list {
+  padding-left: 1.5em;
+  list-style-type: none;
+}
+.simple-list > li {
+  position:relative;
+  top:0;
+  left:0;
+}
+.simple-list > li:before {
+  content:"-";
+  display:inline-block;
+  position:absolute;
+  top:0;left:-1em;
+}
+
+.switch-enter {
+  opacity: 0.01;
+}
+
+.switch-enter.switch-enter-active {
+  opacity: 1.0;
+  transition: opacity 250ms ease-in;
+}
+
+.switch-leave {
+  visibility: visible;
+}
+
+.switch-leave.switch-leave-active {
+  visibility: hidden;
+  transition: visibility 250ms ease-in;
+}
